@@ -1,0 +1,14 @@
+---
+- name: install java jdk
+  apt: pkg=openjdk-7-jdk state=installed update_cache=true
+  register: javainstalled
+
+- name: copy appserver to server
+  copy: src=as.tar.gz dest=/opt/as.tar.gz owner=vagrant group=vagrant
+  register: copyfinished
+
+- name: unarchive as package
+  when: copyfinished|success
+  shell: tar -xzvf as.tar.gz
+  args:
+    chdir: "{{ as_dir }}"

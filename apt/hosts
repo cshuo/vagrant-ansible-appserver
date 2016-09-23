@@ -1,0 +1,8 @@
+[appserver]
+localhost	ansible_connection=local
+
+[database]
+100.0.1.12	ansible_connection=ssh
+
+[loadbalance]
+100.0.1.11	ansible_connection=ssh

@@ -1,0 +1,20 @@
+---
+- name: prepare as environment and install as
+  hosts: appserver
+  sudo: yes
+  roles:
+    - appserver
+
+
+- name: database server installation
+  hosts: database
+  sudo: yes
+  roles:
+    - database
+
+
+- name: loadbalance server installation
+  hosts: loadbalance
+  sudo: yes
+  roles:
+    - loadbalance

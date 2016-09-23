@@ -1,0 +1,5 @@
+---
+- name: Install Mysql 
+  apt: pkg=mysql-server state=installed update_cache=true
+  notify:
+   - Start Mysql
