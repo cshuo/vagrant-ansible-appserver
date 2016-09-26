@@ -24,6 +24,6 @@ Waiting for a while, 3 Vms will be started.
 - Deploy Application Server using Ansible, ssh into the control vm node, and run ansible playbooks.
 ```
 $ vagrant ssh appserver
-$ cd /vagrant
+$ cd /vagrant/apt
 $ ansible-playbook -i hosts playbook.yml
 ```
