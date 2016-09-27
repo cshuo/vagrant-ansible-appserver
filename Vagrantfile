@@ -4,7 +4,8 @@
 APPSERVER_IP = '100.0.1.10'
 LB_IP = '100.0.1.11'
 DB_IP = '100.0.1.12'
-PRIVATE_KEY_SOURCE = '/home/cshuo/.vagrant.d/insecure_private_key'
+# NOTE: modify key path according to your system
+PRIVATE_KEY_SOURCE = '/home/cshuo/.vagrant.d/insecure_private_key' 
 PRIVATE_KEY_DEST = '/home/vagrant/.ssh/id_rsa'
 
 Vagrant.configure("2") do |config|
