@@ -4,8 +4,7 @@
 APPSERVER_IP = '100.0.1.10'
 LB_IP = '100.0.1.11'
 DB_IP = '100.0.1.12'
-# NOTE: modify key path according to your system
-PRIVATE_KEY_SOURCE = '/home/cshuo/.vagrant.d/insecure_private_key' 
+PRIVATE_KEY_SOURCE = '/home/cshuo/.vagrant.d/insecure_private_key'
 PRIVATE_KEY_DEST = '/home/vagrant/.ssh/id_rsa'
 
 Vagrant.configure("2") do |config|
@@ -15,8 +14,6 @@ Vagrant.configure("2") do |config|
     database.ssh.insert_key = false
     database.vm.network "private_network", ip: DB_IP
     database.vm.provider "virtualbox" do |v|
-      v.gui = true
-      v.name = "Database Server"
       v.cpus = 2
       v.memory = 2048
     end
@@ -31,8 +28,6 @@ Vagrant.configure("2") do |config|
     lb.ssh.insert_key = false
     lb.vm.network "private_network", ip: LB_IP
     lb.vm.provider "virtualbox" do |v|
-      v.gui = true
-      v.name = "Load Balance"
       v.cpus = 2
       v.memory = 1024
     end
@@ -47,8 +42,6 @@ Vagrant.configure("2") do |config|
     appserver.ssh.insert_key = false
     appserver.vm.network "private_network", ip: APPSERVER_IP
     appserver.vm.provider "virtualbox" do |v|
-      v.gui = true
-      v.name = "Application Server"
       v.cpus = 2
       v.memory = 2048
     end

@@ -12,3 +12,5 @@
   shell: tar -xzvf as.tar.gz
   args:
     chdir: "{{ as_dir }}"
+  notify:
+   - Start AS

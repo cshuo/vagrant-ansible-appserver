@@ -1,0 +1,5 @@
+---
+- name: Start AS
+  shell: sh stopserv && sh startserv
+  args:
+    chdir: "{{ as_dir }}/InforSuite/AppServer/as/bin/"
